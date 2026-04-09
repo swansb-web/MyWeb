@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="zh-MY">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>保险咨询 | 从被拒保到成功投保</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background: #FFFFFF;
+      color: #333333;
+      line-height: 1.5;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    section {
+      padding: 48px 0;
+      border-bottom: 1px solid #EEEEEE;
+    }
+    section:last-child {
+      border-bottom: none;
+    }
+
+    /* 标题区（深蓝底 + 背景图） */
+    .hero {
+      background: linear-gradient(rgba(26, 58, 95, 0.85), rgba(26, 58, 95, 0.9)), url('https://images.pexels.com/photos/669610/pexels-photo-669610.jpeg?auto=compress&cs=tinysrgb&w=1200');
+      background-size: cover;
+      background-position: center;
+      color: white;
+      padding: 80px 0;
+      text-align: center;
+    }
+    .hero h1 {
+      font-size: 36px;
+      margin-bottom: 16px;
+      font-weight: 700;
+      line-height: 1.3;
+    }
+    .hero .gold {
+      color: #C6A43F;
+    }
+    .hero .subtitle {
+      font-size: 20px;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .hero .tagline {
+      font-size: 16px;
+      opacity: 0.8;
+      margin-top: 16px;
+    }
+    .hero .btn-hero {
+      display: inline-block;
+      background: #C6A43F;
+      color: #1A3A5F;
+      padding: 14px 32px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: bold;
+      margin-top: 28px;
+      transition: 0.2s;
+    }
+    .hero .btn-hero:hover {
+      background: #D4B05A;
+    }
+
+    .section-title {
+      font-size: 28px;
+      font-weight: 700;
+      color: #1A3A5F;
+      margin-bottom: 24px;
+      border-left: 5px solid #C6A43F;
+      padding-left: 16px;
+    }
+
+    /* 故事卡片 + 图片并排 */
+    .story-with-img {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+      background: #F8F9FA;
+      border-radius: 20px;
+      padding: 24px;
+      margin-bottom: 20px;
+      align-items: center;
+    }
+    .story-text {
+      flex: 2;
+    }
+    .story-img {
+      flex: 1;
+      min-width: 120px;
+    }
+    .story-img img {
+      width: 100%;
+      border-radius: 16px;
+      object-fit: cover;
+    }
+    .quote {
+      font-size: 20px;
+      font-weight: 700;
+      color: #1A3A5F;
+      margin-bottom: 16px;
+    }
+    .detail {
+      color: #555;
+      line-height: 1.6;
+    }
+    .read-more-btn {
+      background: none;
+      border: none;
+      color: #C6A43F;
+      font-weight: 600;
+      margin-top: 12px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+    .full-story {
+      display: none;
+      margin-top: 16px;
+      padding-top: 16px;
+      border-top: 1px solid #DDD;
+      color: #444;
+      line-height: 1.6;
+    }
+
+    /* 工具区 + 图片并排 */
+    .tool-flex {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+      background: #F5F5F5;
+      border-radius: 20px;
+      padding: 24px;
+      align-items: center;
+    }
+    .tool-form {
+      flex: 2;
+    }
+    .tool-img {
+      flex: 1;
+      min-width: 120px;
+    }
+    .tool-img img {
+      width: 100%;
+      border-radius: 16px;
+      object-fit: cover;
+    }
+
+    /* 案例卡片 */
+    .case-card {
+      background: #F8F9FA;
+      border-radius: 16px;
+      padding: 20px;
+      margin-bottom: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      align-items: center;
+    }
+    .case-img {
+      width: 80px;
+      border-radius: 16px;
+    }
+    .case-img img {
+      width: 100%;
+      border-radius: 12px;
+    }
+    .case-text {
+      flex: 1;
+    }
+    .case-text .quote {
+      font-size: 18px;
+      margin-bottom: 8px;
+    }
+
+    .btn-wa {
+      display: inline-block;
+      background: #25D366;
+      color: white;
+      padding: 14px 28px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      margin: 10px 0;
+      transition: 0.2s;
+    }
+    .btn-wa:hover {
+      background: #128C7E;
+    }
+
+    .contact-card {
+      background: #F0F2F5;
+      border-radius: 20px;
+      padding: 28px;
+      text-align: center;
+    }
+    .contact-img {
+      max-width: 100%;
+      border-radius: 20px;
+      margin-top: 20px;
+    }
+
+    .footer {
+      background: #1A3A5F;
+      color: #CCCCCC;
+      text-align: center;
+      padding: 32px 0;
+      font-size: 14px;
+    }
+
+    select, button {
+      font-size: 16px;
+    }
+    select {
+      width: 100%;
+      padding: 12px;
+      margin-top: 8px;
+      border-radius: 12px;
+      border: 1px solid #CCC;
+    }
+
+    @media (max-width: 600px) {
+      .hero h1 { font-size: 28px; }
+      .hero .subtitle { font-size: 18px; }
+      .section-title { font-size: 24px; }
+      .story-with-img, .tool-flex { flex-direction: column; }
+      .case-card { flex-direction: column; align-items: flex-start; }
+      .case-img { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ========== 区块1：标题区（含背景图） ========== -->
+<div class="hero">
+  <div class="container">
+    <h1>我不是<span class="gold">卖保单</span>的</h1>
+    <div class="subtitle">从被拒保到成功投保，我帮你走完这一步</div>
+    <div class="tagline">13年翻案经验 · 不送件评估 · 已有健康问题也能问</div>
+    <a href="#" class="btn-hero" id="heroBtn">📋 我有健康状况，还可以保吗？</a>
+  </div>
+</div>
+
+<!-- ========== 区块2：13年故事 + 配图 ========== -->
+<div class="container">
+  <section>
+    <div class="section-title">⚡ 我的理赔哲学</div>
+    <div class="story-with-img">
+      <div class="story-text">
+        <div class="quote">“一宗13年前被拒赔的 Hit & Run 意外死亡，我花了两年半翻案。”</div>
+        <div class="detail">
+          A公司拒赔，但我重查条款、死亡原因、生活习惯、健康精神状况、财务状况…<br>
+          被人笑是私家侦探。<br>
+          两年半后，证明我的判断是对的。<br><br>
+          <strong>所以我现在帮你做保险，不是卖保单，是帮你找到能赔的那条路。</strong><br>
+          <em style="color:#C6A43F;">—— try to find a way to claim</em>
+        </div>
+        <button class="read-more-btn" onclick="toggleStory()">📖 阅读完整经过</button>
+        <div id="fullStory" class="full-story">
+          <strong>完整经过：</strong><br><br>
+          这起案件发生在13年前，投保人因 Hit & Run 车祸去世，A公司以“非意外”为由拒赔。<br><br>
+          我接手后，没有只看死亡证明。我花两年半时间，收集了他生前的：
+          <ul style="margin: 12px 0 12px 20px;">
+            <li>生活习惯（作息、饮食、社交）</li>
+            <li>健康与精神状态（病历、心理咨询记录）</li>
+            <li>财务状况（有没有财务压力导致自杀动机）</li>
+          </ul>
+          甚至访问了身边的人。当时有人说：“你不是做保险，你是做私家侦探。”<br><br>
+          最终我向保险公司证明：没有任何证据指向非意外。根据保险公司的理赔哲学 <strong>“try to find a way to claim”</strong>，找不到拒赔的理由。<br><br>
+          最终，理赔金成功发出。<br><br>
+          <strong>这件事教会我：保险不是“赌会不会赔”，而是“一定能找到赔的方法”。</strong>
+        </div>
+      </div>
+      <div class="story-img">
+        <img src="https://images.pexels.com/photos/590016/pexels-photo-590016.jpeg?auto=compress&cs=tinysrgb&w=600" alt="调查文件与理赔资料">
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 区块3：健康状况评估工具 + 配图 ========== -->
+  <section>
+    <div class="section-title">📋 有健康状况，还能保吗？</div>
+    <div class="tool-flex">
+      <div class="tool-form">
+        <p style="margin-bottom: 20px;">回答3题，我会给你具体建议（不收费，不留记录）</p>
+        <select id="q1">
+          <option value="">Q1：有没有确诊的健康问题？</option>
+          <option value="treating">有，正在治疗</option>
+          <option value="stable">有，稳定控制中</option>
+          <option value="long">有，但很久没复诊</option>
+          <option value="none">完全没有</option>
+        </select>
+        <select id="q2" style="margin-top: 15px;">
+          <option value="">Q2：目前有任何医药卡吗？</option>
+          <option value="none">完全没有</option>
+          <option value="group">有公司的团体保险</option>
+          <option value="personal">有自己买的（不确定保什么）</option>
+        </select>
+        <select id="q3" style="margin-top: 15px;">
+          <option value="">Q3：你最担心哪件事？</option>
+          <option value="deposit">突然住院拿不出押金</option>
+          <option value="exclude">已有疾病，以后不保这项</option>
+          <option value="reject">怕被加费或拒保</option>
+          <option value="know">想先知道“还能买吗”</option>
+        </select>
+        <button onclick="showAdvice()" style="background:#1A3A5F; color:white; padding:14px; border:none; border-radius:50px; margin-top:20px; width:100%; font-weight:bold;">👉 给我建议</button>
+        <div id="advice" style="margin-top:20px; padding:16px; background:white; border-radius:16px; border-left:6px solid #C6A43F; display:none;"></div>
+      </div>
+      <div class="tool-img">
+        <img src="https://images.pexels.com/photos/4386466/pexels-photo-4386466.jpeg?auto=compress&cs=tinysrgb&w=600" alt="健康检查与保险规划">
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 区块4：案例 + 配图 ========== -->
+  <section>
+    <div class="section-title">📌 真实案例 · 有健康状况也能保</div>
+    
+    <div class="case-card">
+      <div class="case-img"><img src="https://images.pexels.com/photos/3938022/pexels-photo-3938022.jpeg?auto=compress&cs=tinysrgb&w=200" alt="高血压"></div>
+      <div class="case-text">
+        <div class="quote">❤️ 高血压稳定控制，50岁成功买到医药卡</div>
+        <div class="detail">被一家公司拒保后找我。换一家保险公司，如实申报，标准保费承保，没有 exclusion。</div>
+      </div>
+    </div>
+
+    <div class="case-card">
+      <div class="case-img"><img src="https://images.pexels.com/photos/4041392/pexels-photo-4041392.jpeg?auto=compress&cs=tinysrgb&w=200" alt="甲状腺"></div>
+      <div class="case-text">
+        <div class="quote">🦋 甲状腺病史，曾被加费50%</div>
+        <div class="detail">重新整理病历，选对保险公司 → 正常保费，顺利投保。</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 区块5：联系区 + 配图 ========== -->
+  <section>
+    <div class="section-title">📞 从被拒保到成功投保，我陪你走</div>
+    <div class="contact-card">
+      <p>📱 <strong>最快回复：WhatsApp 我</strong></p>
+      <a href="#" class="btn-wa" id="whatsappBtn">💬 WhatsApp 免费咨询</a>
+      <p>📧 或电邮：<a href="mailto:your@email.com" style="color:#1A3A5F;">your@email.com</a></p>
+      <p style="font-size:13px;">✅ 咨询不收费，不留记录<br>你不需要先买任何东西才问问题</p>
+      <img class="contact-img" src="https://images.pexels.com/photos/3183183/pexels-photo-3183183.jpeg?auto=compress&cs=tinysrgb&w=800" alt="专业保险咨询">
+    </div>
+  </section>
+</div>
+
+<!-- ========== 页脚 ========== -->
+<div class="footer">
+  <div class="container">
+    <p>© 2025 保险咨询 · 从被拒保到成功投保</p>
+    <p style="font-size:12px;">我信的是：每一份保单都值得被兑现</p>
+  </div>
+</div>
+
+<script>
+  function toggleStory() {
+    const full = document.getElementById('fullStory');
+    full.style.display = full.style.display === 'none' || full.style.display === '' ? 'block' : 'none';
+  }
+
+  function showAdvice() {
+    const q1 = document.getElementById('q1').value;
+    const q2 = document.getElementById('q2').value;
+    const q3 = document.getElementById('q3').value;
+    const adviceDiv = document.getElementById('advice');
+    if (!q1 || !q2 || !q3) {
+      adviceDiv.style.display = 'block';
+      adviceDiv.innerHTML = '⚠️ 三题都选一下，我给的建议才会准哦。';
+      return;
+    }
+    let advice = '';
+    if (q1 !== 'none') advice += '🔍 你有健康情况但“不是买不到”。重点是要选对保险公司、正确申报。<br><br>';
+    else advice += '✅ 你没有既存健康问题，选择很多。<br><br>';
+    if (q2 === 'none') advice += '⚠️ 完全没有医药卡：优先解决“有和没有”的问题。<br><br>';
+    else if (q2 === 'group') advice += '🏢 公司保险离职就没了，建议加保个人医药卡。<br><br>';
+    else if (q2 === 'personal') advice += '📄 不确定保什么：我可以免费帮你 review 保单。<br><br>';
+    advice += '💡 最实际的下一步：<strong>先做一次“不送件、不留记录”的评估</strong>。<br><br>';
+    advice += '📞 直接 WhatsApp 我，告诉我“想做评估”。';
+    adviceDiv.style.display = 'block';
+    adviceDiv.innerHTML = advice;
+  }
+
+  const waNumber = '60XXXXXXXXX'; // 替换成你的 WhatsApp 号码
+  const waLink = 'https://wa.me/' + waNumber + '?text=嗨，我有健康状况想了解还可以保吗';
+  document.getElementById('whatsappBtn').href = waLink;
+  document.getElementById('heroBtn').href = waLink;
+</script>
+</body>
+</html>
